@@ -954,6 +954,10 @@ async def cmd_coin(message, parameters):
         reply_msg = 'tails'
     await reply(message, 'The coin landed on **' + reply_msg + '**!')
 
+@cmd('lenny', [0, 0], "```\n{0}lenny takes no arguments\n\nprints lenny face.```")
+async def cmd_lenny(message, parameters):
+    await reply(message, "( ͡° ͜ʖ ͡°)")
+    
 @cmd('admins', [0, 0], "```\n{0}admins takes no arguments\n\nLists online/idle admins if used in pm, and **alerts** online/idle admins if used in channel (**USE ONLY WHEN NEEDED**).```")
 async def cmd_admins(message, parameters):
     await reply(message, 'Available admins: ' + ', '.join(['<@{}>'.format(x) for x in ADMINS if is_online(x)]))
